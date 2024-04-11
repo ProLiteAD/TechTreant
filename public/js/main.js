@@ -1,9 +1,11 @@
-// my-component.js
-import { ref } from 'vue';
+import { ref } from 'vue'
+
 export default {
-  setup() {
-    const message = ref("HelloW!");
-    const count = ref(2);
-    return { count, message };
+  setup(){
+    const total = ref(2);
+
+    return {
+      total
+    }
   }
-}
+};

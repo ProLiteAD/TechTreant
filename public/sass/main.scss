@@ -1,3 +1,52 @@
+$white-1: #DAD7CD;
+$white-2: #f2f0ea;
+$lightgreen-1: #A3B18A;
+$lightgreen-2: #588157;
+$darkgreen-1: #3A5A40;
+$darkgreen-2: #344E41;
+
 *{
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: $white-2;
+}
+
+/* -- NAV -- */
+nav{
+    $nav-background: $lightgreen-1;
+
+    background-color: $nav-background;
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+
+        li{
+            float: left;
+            a{
+                display: block;
+                padding: .5rem 2rem;
+                background-color: $nav-background;
+                color: black;
+                text-decoration: none;
+                letter-spacing: .1rem;
+                transition: .25s;
+            }
+            a:hover, #current{
+                background-color: $darkgreen-1;
+                color: $white-2;
+            }
+        }
+    }
+}
+/* -- NAV END -- */
+
+.main{
+    margin: 0 .75rem;
 }

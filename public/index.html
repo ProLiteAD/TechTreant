@@ -7,13 +7,24 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Home</h1>
-    <a href="about">About</a>
-    <div id="app">
-        <p>{{ message }}</p>
-        <p>{{ count }}</p>
+    <nav>
+        <ul>
+            <li><a id="current" href="/">Home</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="main">
+        <h1>Home</h1>
+        <div id="app">
+            <p>{{ total }}</p>
+            <div v-for="(int, index) in total">
+                <basic-component></basic-component>
+            </div>
+        </div>
     </div>
 
+    
     <script type="importmap">
         {
             "imports": {
@@ -24,10 +35,11 @@
     <script type="module">
         import { createApp } from 'vue';
         import Main from '/public/js/main.js';
-      
-        createApp(Main).mount('#app');
+        import BasicComponent from '/public/js/components/basic.js';
+        const app = createApp(Main);
+        
+        app.component('basic-component', BasicComponent)
+        app.mount('#app');
     </script>
-    
-    <!-- <script src="/public/js/main.js"></script> -->
 </body>
 </html>
