@@ -1,4 +1,9 @@
-let h1 = document.querySelector('h1');
-h1.onclick = function(){
-    alert('Hello World');
+// my-component.js
+import { ref } from 'vue';
+export default {
+  setup() {
+    const message = ref("HelloW!");
+    const count = ref(2);
+    return { count, message };
+  }
 }

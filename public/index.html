@@ -9,7 +9,25 @@
 <body>
     <h1>Home</h1>
     <a href="about">About</a>
+    <div id="app">
+        <p>{{ message }}</p>
+        <p>{{ count }}</p>
+    </div>
 
-    <script src="/public/js/main.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            }
+        }
+    </script>
+    <script type="module">
+        import { createApp } from 'vue';
+        import Main from '/public/js/main.js';
+      
+        createApp(Main).mount('#app');
+    </script>
+    
+    <!-- <script src="/public/js/main.js"></script> -->
 </body>
 </html>
