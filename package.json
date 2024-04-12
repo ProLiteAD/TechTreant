@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "sass": "sass --watch public/sass:public/css",
     "nodemon": "nodemon server.js",
+    "sass": "sass --watch dev/scss:public/css",
     "dev": "concurrently --kill-others \"npm run nodemon\" \"npm run sass\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

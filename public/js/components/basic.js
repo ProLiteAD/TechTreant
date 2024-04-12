@@ -1,6 +1,9 @@
 import { ref } from 'vue'
 export default {
-  setup() {
+  props:[
+    'title'
+  ],
+  setup(title) {
     const message = ref("Current: ");
     const count = ref(0);
     
@@ -15,6 +18,7 @@ export default {
     }
   },
   template: `
+    <h2>{{ title }}</h2>
     <p>{{ message }}
       <button 
       :disabled="count >= 10"
