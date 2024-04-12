@@ -9,8 +9,10 @@
 <body>
     <nav>
         <ul>
-            <li><a id="current" href="/">Home</a></li>
-            <li><a href="about">About</a></li>
+            <li>
+                <a id="current" href="/">Home</a>
+            </li><li>
+                <a href="about">About</a></li>
         </ul>
     </nav>
 
@@ -23,8 +25,21 @@
             <!-- </div> -->
         </div>
     </div>
+    <footer>
+        <p>This website was designed and developed by Syed Adil Ahmed 2024-<span id="year"></span>.</p>
+        <ul>
+            <li>
+                <a id="current" href="/">Home</a>
+            </li><li>
+                <a href="about">About</a>
+            </li>
+        </ul>
+    </footer>
 
-    
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
     <script type="importmap">
         {
             "imports": {

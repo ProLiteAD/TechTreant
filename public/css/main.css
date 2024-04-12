@@ -40,4 +40,33 @@ nav ul li a:hover, nav ul li #current {
   margin: 0 0.75rem;
 }
 
+/* -- FOOTER -- */
+footer {
+  background-color: #588157;
+  color: #f2f0ea;
+  padding: 0.5rem 1rem;
+}
+footer p {
+  text-align: center;
+}
+footer ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+footer ul li {
+  display: inline-block;
+}
+footer ul li a {
+  padding: 0 1.5rem;
+  color: #DAD7CD;
+}
+footer ul li a:hover, footer ul li #current {
+  color: #f2f0ea;
+}
+
+/* -- FOOTER END -- */
+
 /*# sourceMappingURL=main.css.map */
