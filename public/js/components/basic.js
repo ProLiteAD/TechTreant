@@ -9,6 +9,13 @@ export default {
     
     function increment() {
       count.value++;
+      try{
+        let cartCount = document.querySelector('#cart-count');
+        cartCount.innerHTML = count.value;
+      }
+      catch(err){
+        console.log(err);
+      }
     }
 
     return {

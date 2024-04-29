@@ -1,11 +1,70 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 0.5rem 0 0.5rem;
+}
+header #logo {
+  padding: 0;
+  margin: 0;
+  height: 3rem;
+}
+header div {
+  margin: 0 0.5rem 0 0.5rem;
+  vertical-align: center;
+}
+header div form {
+  text-align: center;
+}
+header div form input[type=text] {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 1rem;
+  width: 200px;
+  margin: 0.5rem 0 0.5rem 0;
+  font-size: 1rem;
+}
+header div form button {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+}
+header div a img {
+  margin-top: 0.75rem;
+  height: 2rem;
+  display: inline;
+}
+header .flex-fill {
+  flex: 1;
+}
+header #cart {
+  position: relative;
+  text-align: center;
+}
+header #cart #cart-count {
+  font-size: 0.8rem;
+  color: black;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 body {
   margin: 0;
   padding: 0;
   background: #f2f0ea;
+}
+body h1 {
+  margin: 1rem 0 1rem 0;
+}
+body p {
+  margin: 1rem 0 1rem 0;
 }
 
 /* -- NAV -- */

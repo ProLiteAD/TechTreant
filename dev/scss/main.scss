@@ -7,12 +7,84 @@ $darkgreen-2: #344E41;
 
 *{
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    *{
+        // border: solid red 1px;
+    }
+
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 .5rem 0 .5rem;
+
+    #logo{
+        padding: 0;
+        margin: 0;
+        height: 3rem;
+    }
+
+    div{
+        margin: 0 .5rem 0 .5rem;
+        vertical-align: center;
+
+        form{
+            text-align: center;
+
+            input[type=text] {
+                padding: .75rem;
+                border: none;
+                border-radius: 1rem;
+                width: 200px;
+                margin: .5rem 0 .5rem 0;
+                font-size: 1rem;
+            }
+            button {
+                padding: 1rem;
+                border-radius: 1rem;
+                border: none;
+            }
+        }
+
+        a{
+            img{
+                margin-top: .75rem;
+                height: 2rem;
+                display: inline;
+            }
+        }
+    }
+    .flex-fill{
+        flex: 1;
+    }
+    #cart{
+        position: relative;
+        text-align: center;
+        #cart-count{
+            font-size: .8rem;
+            color: black;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
 }
 
 body{
     margin: 0;
     padding: 0;
     background: $white-2;
+
+    h1{
+        margin: 1rem 0 1rem 0;
+    }
+
+    p{
+        margin: 1rem 0 1rem 0;
+    }
 }
 
 /* -- NAV -- */
