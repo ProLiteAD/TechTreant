@@ -5,10 +5,26 @@ $lightgreen-2: #588157;
 $darkgreen-1: #3A5A40;
 $darkgreen-2: #344E41;
 
+$default-transition: .25s;
+
 *{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: $white-2;
+
+    h1{
+        margin: 1rem 0 1rem 0;
+    }
+
+    p{
+        margin: 1rem 0 1rem 0;
+    }
 }
 
 header{
@@ -41,10 +57,24 @@ header{
                 margin: .5rem 0 .5rem 0;
                 font-size: 1rem;
             }
+
             button {
-                padding: 1rem;
-                border-radius: 1rem;
+                // background-color: $darkgreen-2;
+                background-image: url('/public/assets/images/search2.svg');
+                background-color: $lightgreen-1;
+                background-size: 75%;
+                background-repeat: no-repeat;
+                background-position: center;
+                padding: 1.4rem;
                 border: none;
+                border-radius: 1rem;
+                vertical-align: middle;
+                transition: $default-transition;
+            }
+
+            button:hover{
+                filter: brightness(90%);
+                cursor: pointer;
             }
         }
 
@@ -59,6 +89,17 @@ header{
     .flex-fill{
         flex: 1;
     }
+
+    .icon{
+        // $darkgreen-2
+        filter: invert(28%) sepia(8%) saturate(1377%) hue-rotate(97deg) brightness(93%) contrast(94%);
+        transition: $default-transition;
+    }
+    .icon:hover{
+        // $lightgreen-2
+        filter: invert(49%) sepia(24%) saturate(562%) hue-rotate(70deg) brightness(88%) contrast(89%);
+    }
+
     #cart{
         position: relative;
         text-align: center;
@@ -73,24 +114,9 @@ header{
     }
 }
 
-body{
-    margin: 0;
-    padding: 0;
-    background: $white-2;
 
-    h1{
-        margin: 1rem 0 1rem 0;
-    }
-
-    p{
-        margin: 1rem 0 1rem 0;
-    }
-}
-
-/* -- NAV -- */
 nav{
     $nav-background: $lightgreen-1;
-
     background-color: $nav-background;
 
     ul{
@@ -101,6 +127,7 @@ nav{
 
         li{
             float: left;
+
             a{
                 display: block;
                 padding: .5rem 2rem;
@@ -108,7 +135,7 @@ nav{
                 color: black;
                 text-decoration: none;
                 letter-spacing: .1rem;
-                transition: .25s;
+                transition: $default-transition;
             }
             a:hover, #current{
                 background-color: $darkgreen-1;
@@ -117,7 +144,6 @@ nav{
         }
     }
 }
-/* -- NAV END -- */
 
 
 .main{
@@ -125,7 +151,6 @@ nav{
 }
 
 
-/* -- FOOTER -- */
 footer{
     $background: $lightgreen-2;
     $text: $white-2;
@@ -158,4 +183,3 @@ footer{
         }
     }
 }
-/* -- FOOTER END -- */

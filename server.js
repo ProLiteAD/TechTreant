@@ -50,8 +50,8 @@ const server = http.createServer((req, res) => {
         }
 
         switch (reqUrl) {
-            case '/about':
-                filePath = __dirname + '/public/about.html';
+            case '/shop':
+                filePath = __dirname + '/public/shop.html';
                 break;
             default:
                 filePath = __dirname + '/public/index.html';

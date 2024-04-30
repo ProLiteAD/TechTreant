@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/main.css">
-    <title>Home</title>
+    <title>Shop</title>
 </head>
 <body>
     <header>
@@ -34,23 +34,28 @@
     <nav>
         <ul>
             <li>
-                <a id="current" href="/">Home</a>
+                <a href="/">Home</a>
             </li><li>
-                <a href="shop">Shop</a></li>
+                <a id="current" href="shop">Shop</a></li>
         </ul>
     </nav>
 
     <div class="main">
-        <h1>Home</h1>
-        <p>This is the homepage!</p>
+        <h1>Shop</h1>
+        <div id="app">
+            <p>{{ total }}</p>
+            <!-- <div v-for="(int, index) in total"> -->
+                <basic-component title="tt"></basic-component>
+            <!-- </div> -->
+        </div>
     </div>
     <footer>
         <p>This website was designed and developed by Syed Adil Ahmed 2024-<span id="year"></span>.</p>
         <ul>
             <li>
-                <a id="current" href="/">Home</a>
+                <a href="/">Home</a>
             </li><li>
-                <a href="shop">Shop</a>
+                <a id="current" href="shop">Shop</a>
             </li><li>
                 <a href="cart">Cart</a>
             </li><li>
@@ -59,7 +64,28 @@
         </ul>
     </footer>
 
+
     <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script type="importmap">
+        {
+            "imports": {
+                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            }
+        }
+    </script>
+    <script type="module">
+        import { createApp } from 'vue';
+        import Main from '/public/js/main.js';
+        import BasicComponent from '/public/js/components/basic.js';
+        const app = createApp(Main);
+        
+        app.component('basic-component', BasicComponent)
+        app.mount('#app');
+
+
+        
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>

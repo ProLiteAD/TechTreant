@@ -4,6 +4,18 @@
   padding: 0;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background: #f2f0ea;
+}
+body h1 {
+  margin: 1rem 0 1rem 0;
+}
+body p {
+  margin: 1rem 0 1rem 0;
+}
+
 header {
   display: flex;
   flex-wrap: nowrap;
@@ -30,9 +42,20 @@ header div form input[type=text] {
   font-size: 1rem;
 }
 header div form button {
-  padding: 1rem;
-  border-radius: 1rem;
+  background-image: url("/public/assets/images/search2.svg");
+  background-color: #A3B18A;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1.4rem;
   border: none;
+  border-radius: 1rem;
+  vertical-align: middle;
+  transition: 0.25s;
+}
+header div form button:hover {
+  filter: brightness(90%);
+  cursor: pointer;
 }
 header div a img {
   margin-top: 0.75rem;
@@ -41,6 +64,13 @@ header div a img {
 }
 header .flex-fill {
   flex: 1;
+}
+header .icon {
+  filter: invert(28%) sepia(8%) saturate(1377%) hue-rotate(97deg) brightness(93%) contrast(94%);
+  transition: 0.25s;
+}
+header .icon:hover {
+  filter: invert(49%) sepia(24%) saturate(562%) hue-rotate(70deg) brightness(88%) contrast(89%);
 }
 header #cart {
   position: relative;
@@ -55,19 +85,6 @@ header #cart #cart-count {
   transform: translate(-50%, -50%);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background: #f2f0ea;
-}
-body h1 {
-  margin: 1rem 0 1rem 0;
-}
-body p {
-  margin: 1rem 0 1rem 0;
-}
-
-/* -- NAV -- */
 nav {
   background-color: #A3B18A;
 }
@@ -94,12 +111,10 @@ nav ul li a:hover, nav ul li #current {
   color: #f2f0ea;
 }
 
-/* -- NAV END -- */
 .main {
   margin: 0 0.75rem;
 }
 
-/* -- FOOTER -- */
 footer {
   background-color: #588157;
   color: #f2f0ea;
@@ -125,7 +140,5 @@ footer ul li a {
 footer ul li a:hover, footer ul li #current {
   color: #f2f0ea;
 }
-
-/* -- FOOTER END -- */
 
 /*# sourceMappingURL=main.css.map */
