@@ -1,70 +1,40 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+const path = require('path');
 
-// const hostname = '127.0.0.1';
-const hostname = '0.0.0.0';
-const port = 3000;
 
-const server = http.createServer((req, res) => {
-    let reqUrl = req.url;
-    // console.log("URL: " +reqUrl);
-    let type = reqUrl.split('.').pop();
-    // console.log("Type: " +type);
-
-    if(type === 'css'){
-        filePath = __dirname + reqUrl;
-        fs.readFile(filePath, (err, data) => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'text/css');
-            res.end(data, 'utf-8');
-        });
-    }
-    else if(type === 'js'){
-        filePath = __dirname + reqUrl;
-        fs.readFile(filePath, (err, data) => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'text/javascript');
-            res.end(data, 'utf-8');
-        });
-    }
-    else if(type === 'svg'){
-        filePath = __dirname + reqUrl;
-        fs.readFile(filePath, (err, data) => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'image/svg+xml');
-            res.end(data, 'utf-8');
-        });
-    }
-    else if(type === 'png'){
-        filePath = __dirname + reqUrl;
-        fs.readFile(filePath, (err, data) => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'image/png');
-            res.end(data, 'utf-8');
-        });
-    }
-    else{
-        if(type !== 'map'){
-            console.log("URL: " +reqUrl);
-            console.log("Type: " +type);
-        }
-
-        switch (reqUrl) {
-            case '/shop':
-                filePath = __dirname + '/public/shop.html';
-                break;
-            default:
-                filePath = __dirname + '/public/index.html';
-                break;
-        }
-        fs.readFile(filePath, (err, data) => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'text/html');
-            res.end(data, 'utf-8');
-        });
-    }
+app.get('/shop', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/shop.html'));
+    // console.log(path.join(__dirname, req.url));
 });
 
-server.listen(port, hostname, () => {
-    console.log(`Server running: http://${hostname}:${port}/`);
+app.get('*', (req, res) => {
+    let type = req.url.split('.').pop();
+    console.log(req.url, type);
+
+    let filePath = path.join(__dirname, req.url);
+
+    if(type === 'css'){
+        res.contentType('text/css');
+    }
+    else if(type === 'js'){ 
+        res.contentType('text/javascript');
+    }
+    else if(type === 'svg'){ 
+        res.contentType('image/svg+xml');
+    }
+    else if(type === 'png'){ 
+        res.contentType('image/png');
+    }
+    else{
+        filePath = path.join(__dirname, 'public/index.html');
+    }
+
+    res.sendFile(filePath);
+});
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });

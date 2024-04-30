@@ -75,18 +75,6 @@
             }
         }
     </script>
-    <script type="module">
-        import { createApp } from 'vue';
-        import Main from '/public/js/main.js';
-        import BasicComponent from '/public/js/components/basic.js';
-        const app = createApp(Main);
-        
-        app.component('basic-component', BasicComponent)
-        app.mount('#app');
-
-
-        
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script type="module" src="/public/js/main.js"></script>
 </body>
 </html>

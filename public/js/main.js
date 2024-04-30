@@ -1,11 +1,7 @@
-import { ref } from 'vue'
+import { createApp } from 'vue';
+import Main from '/public/js/App.js';
+import BasicComponent from '/public/js/components/basic.js';
+const app = createApp(Main);
 
-export default {
-  setup(){
-    const total = ref(2);
-
-    return {
-      total
-    }
-  }
-};
+app.component('basic-component', BasicComponent)
+app.mount('#app');
