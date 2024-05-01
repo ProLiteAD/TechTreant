@@ -1,73 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/main.css">
     <title>Shop</title>
 </head>
+
 <body>
-    <header>
-        <div>
-            <a href="/">
-                <img id="logo" src="/public/assets/images/logo.png" alt="Logo">
-            </a>
-        </div>
-        <div class="flex-fill">
-            <form action="">
-                <input type="text" name="search" placeholder="Search..."><button type="submit">
-                </button>
-            </form>
-        </div>
-        <div id="cart">
-            <a href="cart">
-                <img class="icon" src="/public/assets/images/basket3.svg" alt="Basket">
-                <span id="cart-count">0</span>
-            </a>
-        </div>
-        <div>
-            <a href="account">
-                <img class="icon" src="/public/assets/images/person-fill.svg" alt="User">
-            </a>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li><li>
-                <a id="current" href="shop">Shop</a></li>
-        </ul>
-    </nav>
+    <div id="app">
+        <header-component :total="total"></header-component>
+        <nav-component :is-shop="true"></nav-component>
 
-    <div class="main">
-        <h1>Shop</h1>
-        <div id="app">
-            <p>{{ total }}</p>
-            <!-- <div v-for="(int, index) in total"> -->
-                <basic-component title="tt"></basic-component>
-            <!-- </div> -->
+        <div class="main">
+            <h1>Shop</h1>
+
+            <h1>Total {{ total }}</h1>
+            <basic-component @total-cart="(i)=>modifyCart(i)"></basic-component>
+            <basic-component @total-cart="(i)=>modifyCart(i)"></basic-component>
+
         </div>
+
+        <footer-component :is-shop="true"></footer-component>
     </div>
-    <footer>
-        <p>This website was designed and developed by Syed Adil Ahmed 2024-<span id="year"></span>.</p>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li><li>
-                <a id="current" href="shop">Shop</a>
-            </li><li>
-                <a href="cart">Cart</a>
-            </li><li>
-                <a href="account">Account</a>
-            </li>
-        </ul>
-    </footer>
 
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
     <script type="importmap">
         {
             "imports": {
@@ -77,4 +34,5 @@
     </script>
     <script type="module" src="/public/js/main.js"></script>
 </body>
+
 </html>

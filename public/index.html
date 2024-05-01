@@ -1,66 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/main.css">
     <title>Home</title>
 </head>
+
 <body>
-    <header>
-        <div>
-            <a href="/">
-                <img id="logo" src="/public/assets/images/logo.png" alt="Logo">
-            </a>
-        </div>
-        <div class="flex-fill">
-            <form action="">
-                <input type="text" name="search" placeholder="Search..."><button type="submit">
-                </button>
-            </form>
-        </div>
-        <div id="cart">
-            <a href="cart">
-                <img class="icon" src="/public/assets/images/basket3.svg" alt="Basket">
-                <span id="cart-count">0</span>
-            </a>
-        </div>
-        <div>
-            <a href="account">
-                <img class="icon" src="/public/assets/images/person-fill.svg" alt="User">
-            </a>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li>
-                <a id="current" href="/">Home</a>
-            </li><li>
-                <a href="shop">Shop</a></li>
-        </ul>
-    </nav>
+    <div id="app">
+        <header-component></header-component>
+        <nav-component :is-home="true"></nav-component>
 
-    <div class="main">
-        <h1>Home</h1>
-        <p>This is the homepage!</p>
+        <div class="main">
+            <h1>Home</h1>
+            <p>This is the homepage!</p>
+
+        </div>
+
+        <footer-component :is-home="true"></footer-component>
     </div>
-    <footer>
-        <p>This website was designed and developed by Syed Adil Ahmed 2024-<span id="year"></span>.</p>
-        <ul>
-            <li>
-                <a id="current" href="/">Home</a>
-            </li><li>
-                <a href="shop">Shop</a>
-            </li><li>
-                <a href="cart">Cart</a>
-            </li><li>
-                <a href="account">Account</a>
-            </li>
-        </ul>
-    </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+    <script type="importmap">
+        {
+            "imports": {
+                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            }
+        }
     </script>
+    <script type="module" src="/public/js/main.js"></script>
 </body>
+
 </html>

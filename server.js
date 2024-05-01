@@ -6,12 +6,11 @@ const path = require('path');
 
 app.get('/shop', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/shop.html'));
-    // console.log(path.join(__dirname, req.url));
 });
 
 app.get('*', (req, res) => {
     let type = req.url.split('.').pop();
-    console.log(req.url, type);
+    console.log(req.url);
 
     let filePath = path.join(__dirname, req.url);
 
