@@ -7,7 +7,7 @@
     "start": "node server.js",
     "nodemon": "nodemon server.js",
     "sass": "sass --watch dev/scss:public/css",
-    "test": "concurrently --kill-others \"npm run nodemon\" \"npm run sass\""
+    "dev": "concurrently --kill-others \"npm run nodemon\" \"npm run sass\""
   },
   "author": "Syed Adil Ahmed",
   "license": "ISC",

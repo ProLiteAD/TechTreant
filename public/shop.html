@@ -1,38 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/main.css" />
     <title>Shop</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">
-        <header-component :total="total"></header-component>
-        <nav-component :is-shop="true"></nav-component>
+      <header-component :total="totalItems.length"></header-component>
+      <nav-component :is-shop="true"></nav-component>
 
-        <div class="main">
-            <h1>Shop</h1>
+      <main>
+        <h1>Shop</h1>
 
-            <h1>Total {{ total }}</h1>
-            <basic-component @total-cart="(i)=>modifyCart(i)"></basic-component>
-            <basic-component @total-cart="(i)=>modifyCart(i)"></basic-component>
+        <!-- <div class="item">
+                <div class="image">
+                    <img src="/public/assets/images/items/usb-c.jpg">
+                    <p>test</p>
+                </div>
+                <div class="main">
+                    <h2>USB-C Charger</h2>
+                    <p>A high-quality USB-C charger for fast charging.</p>
+        
+                    <ul>
+                        <li>Fast charging</li>
+                        <li>High-quality</li>
+                        <li>USB-C</li>
+                    </ul>
 
-        </div>
+                </div>
+                <div class="side">
+                    <h2>£4.99</h2>
+                    <p class="o-price">£9.99</p>
 
-        <footer-component :is-shop="true"></footer-component>
+                    <button class="red">Remove</button>
+                    <button class="green">Add</button>
+                </div>
+            </div> 
+            <br><br><br> -->
+
+        <h1>Total {{ totalItems.length }}</h1>
+        <shop-component @total-cart="(i)=>modifyCart(i)"></shop-component>
+      </main>
+
+      <footer-component :is-shop="true"></footer-component>
     </div>
 
     <script type="importmap">
-        {
-            "imports": {
-                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-            }
+      {
+        "imports": {
+          "allItems": "/public/assets/data/items.js",
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
         }
+      }
     </script>
+    <!-- <script type="module">
+        import { items } from 'allItems';
+        console.log(items);
+    </script> -->
     <script type="module" src="/public/js/main.js"></script>
-</body>
-
+  </body>
 </html>

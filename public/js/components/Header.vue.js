@@ -4,7 +4,6 @@ export default {
       'total'
     ],
     setup(total){
-        console.log();
         return {
             total
         }

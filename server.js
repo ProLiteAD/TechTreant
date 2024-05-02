@@ -20,11 +20,18 @@ app.get('*', (req, res) => {
     else if(type === 'js'){ 
         res.contentType('text/javascript');
     }
+    else if(type === 'json'){ 
+        // res.contentType('application/json');
+        res.contentType('text/javascript');
+    }
     else if(type === 'svg'){ 
         res.contentType('image/svg+xml');
     }
     else if(type === 'png'){ 
         res.contentType('image/png');
+    }
+    else if(type === 'jpg'){ 
+        res.contentType('image/jpg');
     }
     else{
         filePath = path.join(__dirname, 'public/index.html');

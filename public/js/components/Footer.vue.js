@@ -1,17 +1,17 @@
-import { ref } from 'vue'
+import { ref } from "vue";
 export default {
-    props: {
-        isHome: Boolean,
-        isShop: Boolean
-    },
-    setup(isHome, isShop) {
-        const year = ref(new Date().getFullYear());
+  props: {
+    isHome: Boolean,
+    isShop: Boolean,
+  },
+  setup(props) {
+    const year = ref(new Date().getFullYear());
 
-        return {
-            year
-        }
-    },
-    template: `
+    return {
+      year,
+    };
+  },
+  template: `
     <footer>
         <p>This website was designed and developed by Syed Adil Ahmed 2024-<span id="year">{{ year }}</span>.</p>
         <ul>
@@ -26,5 +26,5 @@ export default {
             </li>
         </ul>
     </footer>
-    `
-}
+    `,
+};

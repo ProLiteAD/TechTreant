@@ -4,16 +4,18 @@ export default {
     
   ],
   setup(){
-    const total = ref(0);
+    const totalItems = ref([]);
 
     function modifyCart(input){
       // alert('Emit received');
-      total.value += input;
+
+      totalItems.value = input;
+      
       // document.querySelector('#cart-count').innerHTML = total.value;
     }
 
     return {
-      total, modifyCart,
+      totalItems, modifyCart,
     }
   }
 };
