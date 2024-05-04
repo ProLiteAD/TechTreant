@@ -1,21 +1,45 @@
-import { ref } from 'vue'
+import { ref } from "vue";
 export default {
-  props: [
-    
-  ],
-  setup(){
+  props: [],
+  setup() {
     const totalItems = ref([]);
 
-    function modifyCart(input){
-      // alert('Emit received');
+    const cartHover = ref(false);
+    const boolHoverCart = ref(false);
+    const boolHoverCartIcon = ref(false);
+    
 
+    function modifyCart(input) {
       totalItems.value = input;
-      
-      // document.querySelector('#cart-count').innerHTML = total.value;
+    }
+
+    function upadateCartHover() {
+      cartHover.value = boolHoverCartIcon.value || boolHoverCart.value;
+    }
+
+    function hoverCart(input) {
+      boolHoverCart.value = input;
+      upadateCartHover();
+    }
+
+    function hoverCartIcon(input) {
+      if (input) {
+        boolHoverCartIcon.value = input;
+        upadateCartHover();
+      } else {
+        setTimeout(() => {
+          boolHoverCartIcon.value = input;
+          upadateCartHover();
+        }, 200);
+      }
     }
 
     return {
-      totalItems, modifyCart,
-    }
-  }
+      totalItems,
+      cartHover,
+      modifyCart,
+      hoverCart,
+      hoverCartIcon,
+    };
+  },
 };

@@ -1,14 +1,18 @@
-import { ref } from 'vue'
+import { ref } from "vue";
 export default {
-    props: [
-      'total'
-    ],
-    setup(total){
-        return {
-            total
-        }
-    },
-    template: `
+  props: ["total"],
+  emits: ["hoverCartIcon"],
+  setup(total) {
+    
+    function hoverCartIcon(input){
+        this.$emit('hoverCartIcon',input);
+    }
+
+    return {
+      total, hoverCartIcon
+    };
+  },
+  template: `
     <header>
         <div>
             <a href="/">
@@ -21,8 +25,10 @@ export default {
                 </button>
             </form>
         </div>
-        <div id="cart">
-            <a href="cart">
+        <div id="cart" 
+            @mouseenter="hoverCartIcon(true)"
+            @mouseleave="hoverCartIcon(false)">
+            <a href="#">
                 <img class="icon" src="/public/assets/images/basket3.svg" alt="Basket">
                 <span id="cart-count">{{ total.total }}</span>
             </a>
@@ -33,5 +39,5 @@ export default {
             </a>
         </div>
     </header>
-    `
-}
+    `,
+};

@@ -2,7 +2,7 @@ import { ref } from 'vue'
 
 export default {
   props: {
-    myItem: Object
+    myItem: Object,
   },
   emits: [
     'addCart',
@@ -35,7 +35,14 @@ export default {
     }
 
     return {
-      count, myImage, oldImage, addCart, removeCart, updateImage, hoverImage, unhoverImage
+      count,
+      myImage,
+      oldImage,
+      addCart,
+      removeCart,
+      updateImage,
+      hoverImage,
+      unhoverImage
     }
   },
   template: `
@@ -69,8 +76,8 @@ export default {
       <p class="o-price">£{{ myItem.oldPrice }}</p>
 
       <button 
-      class="green"
-      @click="addCart()">Add</button>
+        class="green"
+        @click="addCart()">Add</button>
       
       <button 
         class="red"

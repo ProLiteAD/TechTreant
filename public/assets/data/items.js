@@ -31,7 +31,7 @@ export const allItems = [
     id: "2",
     name: "Smartphone",
     price: 699.99,
-    oldPrice: 799.99,
+    oldPrice: 849.99,
     description: "A high-quality smartphone with advanced features.",
     tags: ["smartphone", "mobile", "communication"],
     image: [
@@ -59,8 +59,8 @@ export const allItems = [
   {
     id: "5",
     name: "Tablet",
-    price: 399.99,
-    oldPrice: 499.99,
+    price: 299.99,
+    oldPrice: 349.99,
     description: "A versatile tablet for entertainment and productivity.",
     tags: ["tablet", "mobile", "productivity", "entertainment"],
     image: [
@@ -99,8 +99,8 @@ export const allItems = [
   {
     id: "7",
     name: "Gaming Console",
-    price: 499.99,
-    oldPrice: 599.99,
+    price: 199.99,
+    oldPrice: 359.99,
     description: "A gaming console for the ultimate gaming experience.",
     tags: ["gaming", "console", "entertainment"],
     image: [

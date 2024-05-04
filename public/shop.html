@@ -9,39 +9,19 @@
 
   <body>
     <div id="app">
-      <header-component :total="totalItems.length"></header-component>
+      <header-component 
+        :total="totalItems.length"
+        @hover-cart-icon="(i)=>hoverCartIcon(i)"></header-component>
+
+      <cart-component 
+        @click="updateCart()"
+        :my-items="totalItems"
+        @hover-cart="(i)=>hoverCart(i)"
+        :class="{ hide: !cartHover }"></cart-component>
+
       <nav-component :is-shop="true"></nav-component>
 
       <main>
-        <h1>Shop</h1>
-
-        <!-- <div class="item">
-                <div class="image">
-                    <img src="/public/assets/images/items/usb-c.jpg">
-                    <p>test</p>
-                </div>
-                <div class="main">
-                    <h2>USB-C Charger</h2>
-                    <p>A high-quality USB-C charger for fast charging.</p>
-        
-                    <ul>
-                        <li>Fast charging</li>
-                        <li>High-quality</li>
-                        <li>USB-C</li>
-                    </ul>
-
-                </div>
-                <div class="side">
-                    <h2>£4.99</h2>
-                    <p class="o-price">£9.99</p>
-
-                    <button class="red">Remove</button>
-                    <button class="green">Add</button>
-                </div>
-            </div> 
-            <br><br><br> -->
-
-        <h1>Total {{ totalItems.length }}</h1>
         <shop-component @total-cart="(i)=>modifyCart(i)"></shop-component>
       </main>
 
@@ -56,10 +36,191 @@
         }
       }
     </script>
-    <!-- <script type="module">
-        import { items } from 'allItems';
-        console.log(items);
-    </script> -->
+    <script>
+      const allItems = [
+        {
+          id: "1",
+          name: "USB-C Charger",
+          price: 4.99,
+          oldPrice: 9.99,
+          description: "A high-quality USB-C charger for fast charging.",
+          tags: ["usb-c", "fast charging", "accessory"],
+          image: [
+            {
+              color: "black",
+              url: "/public/assets/images/items/usb-c.jpg",
+              alt: "Black USB-C Charger",
+              attr: {
+                name: "Adafruit Industries",
+                url: "https://www.flickr.com/photos/adafruit/",
+              },
+            },
+            {
+              color: "white",
+              url: "/public/assets/images/items/usb-c2.jpg",
+              alt: "White USB-C Charger",
+              attr: {
+                name: "Project Kei",
+                url: "https://commons.wikimedia.org/wiki/File:Usb_type-c_plug_socket.jpg",
+              },
+            },
+          ],
+        },
+        {
+          id: "2",
+          name: "Smartphone",
+          price: 699.99,
+          oldPrice: 799.99,
+          description: "A high-quality smartphone with advanced features.",
+          tags: ["smartphone", "mobile", "communication"],
+          image: [
+            {
+              url: "/public/assets/images/items/smartphone.jpg",
+              alt: "Smartphone",
+            },
+          ],
+        },
+        {
+          id: "4",
+          name: "Smartwatch",
+          price: 199.99,
+          oldPrice: 249.99,
+          description: "A stylish smartwatch with fitness tracking features.",
+          tags: ["smartwatch", "wearable", "fitness"],
+          image: [
+            {
+              color: "black",
+              url: "/public/assets/images/items/smartwatch.jpg",
+              alt: "Smartwatch",
+            },
+          ],
+        },
+        {
+          id: "5",
+          name: "Tablet",
+          price: 399.99,
+          oldPrice: 499.99,
+          description: "A versatile tablet for entertainment and productivity.",
+          tags: ["tablet", "mobile", "productivity", "entertainment"],
+          image: [
+            {
+              color: "black",
+              url: "/public/assets/images/items/tablet.jpg",
+              alt: "Smart Tablet",
+            },
+          ],
+        },
+        {
+          id: "6",
+          name: "Headphones",
+          price: 99.99,
+          oldPrice: 129.99,
+          description:
+            "High-quality headphones for immersive audio experience.",
+          tags: ["headphones", "wireless", "audio", "music"],
+          image: [
+            {
+              color: "black",
+              url: "/public/assets/images/items/headphones.jpg",
+              alt: "Black Wireless Headphones",
+            },
+            {
+              color: "white",
+              url: "/public/assets/images/items/headphones2.jpg",
+              alt: "White Wireless Headphones",
+            },
+            {
+              color: "red",
+              url: "/public/assets/images/items/headphones3.jpg",
+              alt: "Red Wireless Headphones",
+            },
+          ],
+        },
+        {
+          id: "7",
+          name: "Gaming Console",
+          price: 499.99,
+          oldPrice: 599.99,
+          description: "A gaming console for the ultimate gaming experience.",
+          tags: ["gaming", "console", "entertainment"],
+          image: [
+            {
+              url: "/public/assets/images/items/gaming-console.jpg",
+              alt: "Black Gaming Console",
+            },
+          ],
+        },
+        {
+          id: "8",
+          name: "Wireless Router",
+          price: 79.99,
+          oldPrice: 99.99,
+          description:
+            "A high-speed wireless router for seamless internet connectivity.",
+          tags: ["router", "internet", "connectivity"],
+          image: [
+            {
+              url: "/public/assets/images/items/router.jpg",
+              alt: "Black Wireless Router",
+            },
+          ],
+        },
+        {
+          id: "9",
+          name: "Camera",
+          price: 599.99,
+          oldPrice: 699.99,
+          description:
+            "A professional-grade camera for capturing stunning photos.",
+          tags: ["camera", "photography", "professional"],
+          image: [
+            {
+              url: "/public/assets/images/items/camera.jpg",
+              alt: "Black Professional Camera",
+            },
+          ],
+        },
+        {
+          id: "10",
+          name: "Bluetooth Speaker",
+          price: 59.99,
+          oldPrice: 79.99,
+          description: "A portable Bluetooth speaker for on-the-go music.",
+          tags: ["speaker", "audio", "music", "portable", "bluetooth"],
+          image: [
+            {
+              url: "/public/assets/images/items/speaker.jpg",
+              alt: "White Bluetooth Speaker",
+            },
+          ],
+        },
+        {
+          id: "11",
+          name: "External Hard Drive",
+          price: 129.99,
+          oldPrice: 149.99,
+          description:
+            "An external hard drive for storing large amounts of data.",
+          tags: ["hard drive", "storage", "backup"],
+          image: [
+            {
+              url: "/public/assets/images/items/harddrive.jpg",
+              alt: "Red External Hard Drive",
+            },
+          ],
+        },
+      ];
+
+      function sortName(a, b) {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      }
+    </script>
     <script type="module" src="/public/js/main.js"></script>
   </body>
 </html>
