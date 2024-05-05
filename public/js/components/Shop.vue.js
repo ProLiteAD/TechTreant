@@ -148,12 +148,15 @@ export default {
     </div>
     
     <div class="items" v-if="renderComponent">
-    <h1>Shop</h1>
-    <item-component
-      v-for="item in shopItems"
-      :my-item="item"
-      @add-cart="(i)=>addCart(i)" 
-      @remove-cart="(i)=>removeCart(i)"></item-component>
+      <div>
+        <p class="breadcrumb"><a>Shop</a> / </p>
+        <h1>Shop</h1>
+      </div>
+      <item-component
+        v-for="item in shopItems"
+        :my-item="item"
+        @add-cart="(i)=>addCart(i)" 
+        @remove-cart="(i)=>removeCart(i)"></item-component>
     </div>
   </div>
   `,

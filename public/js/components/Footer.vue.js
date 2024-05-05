@@ -20,8 +20,6 @@ export default {
             </li><li>
                 <a :class="{current: isShop}" href="shop">Shop</a>
             </li><li>
-                <a href="cart">Cart</a>
-            </li><li>
                 <a href="account">Account</a>
             </li>
         </ul>

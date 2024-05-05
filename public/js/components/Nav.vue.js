@@ -4,7 +4,7 @@ export default {
         isHome: Boolean,
         isShop: Boolean
     },
-    setup(isHome, isShop) {
+    setup() {
 
     },
     template: `

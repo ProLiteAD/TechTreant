@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/main.css">
-    <title>Home</title>
+    <title>Checkout</title>
 </head>
 
 <body>
     <div id="app">
         <header-component :is-shop="false"></header-component>
-        <nav-component :is-home="true"></nav-component>
+        <nav-component :is-home="false"></nav-component>
 
         <button id="topButton" 
           @click="topReturn();"
@@ -21,14 +21,12 @@
 
         <main>
             <div>
-                <p class="breadcrumb"><a>Home</a> / </p>
-                <h1>Home</h1>
+                <p class="breadcrumb"><a href="/shop">Shop</a> / <a>Checkout</a> / </p>
               </div>
-            <p>This is the homepage!</p>
-
+            <checkout-component></checkout-component>
         </main>
 
-        <footer-component :is-home="true"></footer-component>
+        <footer-component :is-home="false"></footer-component>
     </div>
 
     <script type="importmap">
@@ -40,6 +38,17 @@
         }
     </script>
     <script type="module" src="/public/js/main.js"></script>
+    <script>
+        // let cart;
+        // try{
+        //     myCart = JSON.parse(localStorage['cart']);
+        //     console.log(myCart);
+        //     // localStorage.removeItem('cart');
+        // }
+        // catch(error){
+        //     console.error('No cart found \n'+error);
+        // }
+    </script>
 </body>
 
 </html>

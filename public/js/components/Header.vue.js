@@ -1,6 +1,6 @@
 import { ref } from "vue";
 export default {
-  props: ["total"],
+  props: ["total", "isShop"],
   emits: ["hoverCartIcon"],
   setup(total) {
     
@@ -26,6 +26,7 @@ export default {
             </form>
         </div>
         <div id="cart" 
+            :class="{hide: !isShop}"
             @mouseenter="hoverCartIcon(true)"
             @mouseleave="hoverCartIcon(false)">
             <a href="#">

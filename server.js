@@ -8,6 +8,10 @@ app.get('/shop', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/shop.html'));
 });
 
+app.get('/checkout', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/checkout.html'));
+});
+
 app.get('*', (req, res) => {
     let type = req.url.split('.').pop();
     console.log(req.url);
