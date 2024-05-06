@@ -3,6 +3,7 @@ export default {
   props: {
     isHome: Boolean,
     isShop: Boolean,
+    isSupport: Boolean,
   },
   setup(props) {
     const year = ref(new Date().getFullYear());
@@ -20,7 +21,7 @@ export default {
             </li><li>
                 <a :class="{current: isShop}" href="shop">Shop</a>
             </li><li>
-                <a href="account">Account</a>
+                <a :class="{current: isSupport}"  href="support">Support</a>
             </li>
         </ul>
     </footer>

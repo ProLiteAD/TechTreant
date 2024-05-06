@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/public/assets/images/tree.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/main.css" />
+    <title>Support</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <header-component :is-shop="false"></header-component>
+      <nav-component :is-support="true"></nav-component>
+
+      <button
+        id="topButton"
+        @click="topReturn();"
+        :class="{ hide: !showReturn }"
+      >
+        Top
+      </button>
+
+      <main>
+        <div>
+          <p class="breadcrumb"><a href="/">Home</a> / <a>Support</a> /</p>
+          <h1>Contact Support</h1>
+        </div>
+        <form class="supportForm">
+          <div class="name">
+            <div class="fname">
+              <label for="fname"
+                >First Name <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                name="fname"
+                placeholder="Firstname"
+                required
+              />
+            </div>
+            <div class="sname">
+              <label for="sname">Surame <span class="required">*</span></label>
+              <input type="text" name="sname" placeholder="Surname" required />
+            </div>
+          </div>
+
+          <div class="email">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+
+          <div class="enquiry">
+            <label for="enquiry">Enquiry <span class="required">*</span></label>
+            <textarea
+              name="enquiry"
+              placeholder="Your Enquiry"
+              required
+            ></textarea>
+          </div>
+
+          <h2>Confirmation</h2>
+          <div class="confirm">
+            <label for="terms">
+              <input type="checkbox" name="terms" id="terms" required />
+              I agree to the terms and conditions
+              <span class="required">*</span>
+            </label>
+
+            <input type="submit" value="Send" />
+          </div>
+        </form>
+      </main>
+
+      <footer-component :is-support="true"></footer-component>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "allItems": "/public/assets/data/items.js",
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+    <script type="module" src="/public/js/main.js"></script>
+  </body>
+</html>

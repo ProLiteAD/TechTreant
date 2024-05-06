@@ -11,6 +11,21 @@ $default-transition: 0.25s;
 $minBreak1: 1281px;
 $maxBreak1: 1280px;
 
+@font-face {
+  font-family: "OpenSans_Condensed";
+  src: url("/public/assets/fonts/OpenSans_Condensed-Bold.ttf");
+}
+
+@font-face {
+  font-family: "CooperHewitt-Book";
+  src: url("/public/assets/fonts/CooperHewitt-Book.otf");
+}
+
+@font-face {
+  font-family: "PTSans-Regular";
+  src: url("/public/assets/fonts/PTSans-Regular.ttf");
+}
+
 @media (min-width: $minBreak1) {
   header {
     width: 80%;
@@ -50,7 +65,7 @@ $maxBreak1: 1280px;
 }
 
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  // font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   .hide {
@@ -61,10 +76,38 @@ $maxBreak1: 1280px;
 body {
   margin: 0;
   padding: 0;
-  background: $white-2;
+  // background: $white-2;
+  // background-color: #F0EDEE;
 
   h1 {
     margin: 0 0 1rem 0;
+    font-family: "OpenSans_Condensed", Arial, Helvetica, sans-serif;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  nav ul li a {
+    font-family: "CooperHewitt-Book", Arial, Helvetica, sans-serif;
+  }
+
+  h2 {
+    color: $darkgreen-2;
+  }
+
+  h3 {
+    color: $darkgreen-2;
+  }
+
+  button,
+  input[type="submit"] {
+    font-weight: bold;
+  }
+
+  * {
+    font-family: "PTSans-Regular", Arial, Helvetica, sans-serif;
   }
 
   p {
@@ -90,22 +133,23 @@ header {
       text-align: center;
 
       input[type="text"] {
+        margin: 0.5rem 0.1rem 0.5rem 0;
         padding: 0.75rem;
-        border: none;
-        border-radius: 1rem;
         width: 25%;
-        margin: 0.5rem 0 0.5rem 0;
+        border-radius: 1rem;
+        border: none;
         font-size: 1rem;
+        background-color: $white-2;
       }
 
       button {
-        // background-color: $darkgreen-2;
+        margin-left: 0.1rem;
         background-image: url("/public/assets/images/search2.svg");
         background-color: $lightgreen-1;
         background-size: 75%;
         background-repeat: no-repeat;
         background-position: center;
-        padding: 1.25rem;
+        padding: 1.35rem;
         border: none;
         border-radius: 1rem;
         vertical-align: middle;
@@ -150,9 +194,9 @@ header {
 
     #cart-count {
       font-size: 0.8rem;
-      color: black;
+      color: $darkgreen-2;
       position: absolute;
-      top: 60%;
+      top: 57%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
@@ -160,8 +204,10 @@ header {
 }
 
 nav {
-  $nav-background: $lightgreen-1;
+  $nav-background: $white-2;
+  $nav-hover: $lightgreen-2;
   background-color: $nav-background;
+  border-bottom: solid $white-3 1px;
 
   ul {
     list-style-type: none;
@@ -173,9 +219,9 @@ nav {
 
       a {
         display: block;
-        padding: 0.5rem 2rem;
+        padding: 0.75rem 2rem 0.5rem 2rem;
         background-color: $nav-background;
-        color: black;
+        color: $darkgreen-2;
         text-decoration: none;
         letter-spacing: 0.1rem;
         transition: $default-transition;
@@ -183,16 +229,15 @@ nav {
 
       a:hover,
       .current {
-        background-color: $darkgreen-1;
-        color: $white-2;
+        background-color: $nav-hover;
+        color: #fff;
       }
     }
   }
 }
 
 .cart {
-  // border: solid red 1px;
-  background-color: $lightgreen-1;
+  background-color: $white-2;
   position: absolute;
   padding: 0 0.5rem 0 0.5rem;
   border-radius: 0 0 0 0.5rem;
@@ -200,7 +245,7 @@ nav {
 
   .items {
     .item {
-      border-bottom: solid black 1px;
+      border-bottom: solid $darkgreen-2 1px;
       padding: 0.5rem 0 0.5rem 0;
       display: flex;
       flex-wrap: nowrap;
@@ -292,6 +337,79 @@ main {
     }
   }
 
+
+  .slides-container{
+    // * {
+    //   border: solid red 1px;
+    // }
+
+    .buttons{
+      display: flex;
+      flex-wrap: nowrap;
+      position: absolute;
+      top: 60%;
+      left: 0%;
+      right: 0%;
+      // transform: translate(-50%, -50%);
+
+      div{
+        flex:1;
+      }
+      div:nth-child(2){
+        text-align: right;
+      }
+
+      button {
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: none;
+        transition: $default-transition;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        background-color: $lightgreen-2;
+        color: white;
+        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+      }
+      button:hover {
+        background-color: $darkgreen-1;
+      }
+
+      .prev{
+        margin-left: 1rem;
+      }
+      .next{
+        margin-right: 1rem;
+      }
+    }
+
+    .slides {
+      @mixin cardBackground {
+        margin-left: 0.5rem;
+        margin-bottom: 1.5rem;
+        padding: 0.5rem;
+        background-image: radial-gradient($white-2, #fff);
+        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+        border-radius: 0.5rem;
+      }
+  
+      padding-top: .25rem;
+      overflow-x: hidden;
+      display: flex;
+      flex-wrap: nowrap;
+      
+      .slide:first-of-type{
+        margin-left: -15rem;
+      }
+      .slide {
+        @include cardBackground;
+  
+        img {
+          height: 300px;
+        }
+      }
+    }
+  }
+
   .shopping {
     margin-top: 1rem;
 
@@ -302,13 +420,15 @@ main {
       margin-left: 0.5rem;
       margin-bottom: 1.5rem;
       padding: 0.5rem;
-      background-image: radial-gradient($white-2, $white-1);
+      // background-image: radial-gradient($white-1, $white-2);
+      background-image: radial-gradient($white-2, #fff);
       box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
       border-radius: 0.5rem;
     }
 
     .filter {
       @include cardBackground;
+      padding: 0.5rem 2rem 1rem 2rem;
       margin-left: 0;
       margin-right: 1rem;
       height: fit-content;
@@ -324,7 +444,7 @@ main {
           $rColor: #009688;
           input[type="radio"] {
             $size: 1rem;
-
+            margin-top: 0.2rem;
             vertical-align: top;
             height: $size;
             aspect-ratio: 1;
@@ -347,6 +467,19 @@ main {
 
     .items {
       flex: 1;
+
+      .top {
+        display: flex;
+        flex-wrap: nowrap;
+
+        p {
+          flex: 1;
+          margin: auto 0;
+          padding: 0 0.5rem 0 0;
+          text-align: right;
+          color: $darkgreen-1;
+        }
+      }
 
       .item {
         display: flex;
@@ -377,17 +510,17 @@ main {
 
             .black {
               background-color: black;
-              border: solid white 1px;
+              border: solid $darkgreen-2 1px;
             }
 
             .white {
               background-color: white;
-              border: solid black 1px;
+              border: solid $darkgreen-2 1px;
             }
 
             .red {
               background-color: red;
-              border: solid black 1px;
+              border: solid $darkgreen-2 1px;
             }
           }
         }
@@ -395,6 +528,10 @@ main {
         .main {
           margin: 0 0.5rem 0 0.5rem;
           flex: 1;
+
+          .stars {
+            margin: 0;
+          }
 
           ul {
             margin-left: 1.25rem;
@@ -406,7 +543,7 @@ main {
           min-width: 6rem;
           padding: 0 0.5rem 0 0.5rem;
           text-align: center;
-          border-left: solid black 1px;
+          border-left: solid $darkgreen-2 1px;
 
           .o-price {
             margin-top: 0;
@@ -426,21 +563,21 @@ main {
             cursor: pointer;
           }
 
-          .red {
-            background-color: rgb(224, 38, 38);
+          .remove {
+            background-color: rgb(197, 46, 66);
             color: white;
           }
 
-          .red:hover {
-            background-color: rgb(173, 33, 33);
+          .remove:hover {
+            background-color: rgb(155, 47, 87);
           }
 
-          .green {
+          .add {
             background-color: $lightgreen-2;
             color: white;
           }
 
-          .green:hover {
+          .add:hover {
             background-color: $darkgreen-1;
           }
         }
@@ -454,15 +591,15 @@ main {
 
     .items {
       padding-right: 1rem;
-      border-right: solid black 1px;
-      
+      border-right: solid $darkgreen-2 1px;
+
       table {
         border-collapse: collapse;
 
         tr {
           td,
           th {
-            border-bottom: solid black 1px;
+            border-bottom: solid $darkgreen-2 1px;
             padding: 0.25rem 0.5rem 0.25rem 0.5rem;
             text-align: center;
           }
@@ -486,102 +623,116 @@ main {
         }
       }
     }
-    form{
+    form {
       margin-left: 1rem;
       flex: 1;
 
-      h3{
-        margin: 1rem 0 .25rem 0;
+      h3 {
+        margin: 1rem 0 0.25rem 0;
       }
 
-      @mixin flexRow{
+      @mixin flexRow {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
       }
-      
-      @mixin flexColumn{
+
+      @mixin flexColumn {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
       }
 
-      input[type="text"], input[type="email"] {
+      input[type="text"],
+      input[type="email"] {
         padding: 0.75rem;
         margin: 0.25rem 0 0.5rem 0;
         font-size: 1rem;
+        background-color: $white-2;
+        border: solid $darkgreen-2 1px;
+        outline: none;
       }
 
-      .name{
+      input[type="text"]:disabled {
+        background-color: lightgrey;
+      }
+
+      .name {
         @include flexRow;
-        margin-top: .5rem;
-        padding: 0 .5rem 0 .5rem;
-        
-        .fname{
+        margin-top: 0.5rem;
+        padding: 0 0.5rem 0 0.5rem;
+
+        .fname {
           @include flexColumn;
           flex: 1;
-          margin-right:.5rem;
+          margin-right: 0.5rem;
         }
-        .sname{
+        .sname {
           @include flexColumn;
           flex: 1;
-          margin-left: .5rem;
+          margin-left: 0.5rem;
         }
       }
 
-      .email{
+      .email {
         @include flexColumn;
-        margin-top: .5rem;
-        padding: 0 .5rem 0 .5rem;
+        margin-top: 0.5rem;
+        padding: 0 0.5rem 0 0.5rem;
       }
 
-      .address, .address2{
+      .address,
+      .address2 {
         @include flexRow;
-        margin-top: .5rem;
-        padding: 0 .5rem 0 .5rem;
+        margin-top: 0.5rem;
+        padding: 0 0.5rem 0 0.5rem;
 
-        .line1, .city{
+        .line1,
+        .city {
           @include flexColumn;
           flex: 1;
-          margin-right:.5rem;
+          margin-right: 0.5rem;
         }
-        .line2, .postcode{
+        .line2,
+        .postcode {
           @include flexColumn;
           flex: 1;
-          margin-left: .5rem;
+          margin-left: 0.5rem;
         }
       }
 
-      .address3{
+      .address3 {
         @include flexRow;
-        margin-top: .5rem;
-        padding: 0 .5rem 0 .5rem;
-        
-        .country{
+        margin-top: 0.5rem;
+        padding: 0 0.5rem 0 0.5rem;
+
+        .country {
           @include flexColumn;
           flex: 1;
         }
       }
 
-      .notes{
+      .notes {
         @include flexColumn;
-        margin-top: .5rem;
-        padding: 0 .5rem 0 .5rem;
+        margin-top: 0.5rem;
+        padding: 0 0.5rem 0 0.5rem;
 
-        textarea{
-          padding: .5rem;
+        textarea {
+          padding: 0.5rem;
+          margin-top: 0.25rem;
           resize: vertical;
+          background-color: $white-2;
+          border: solid $darkgreen-2 1px;
         }
       }
 
-      .required{
+      .required {
         color: red;
         font-weight: bold;
       }
 
-      .confirm{
-        padding: 0 .5rem;
-        input[type="submit"]{
+      .confirm {
+        padding: 0 0.5rem;
+        input[type="submit"] {
           display: block;
           margin: 1rem 0 0.25rem 0;
           padding: 0.5rem;
@@ -600,11 +751,105 @@ main {
       }
     }
   }
+
+  .supportForm {
+    margin-left: 1rem;
+    flex: 1;
+
+    @mixin flexRow {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+    }
+
+    @mixin flexColumn {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      padding: 0.75rem;
+      margin: 0.25rem 0 0.5rem 0;
+      font-size: 1rem;
+      background-color: $white-2;
+      border: solid $darkgreen-2 1px;
+      outline: none;
+    }
+
+    .name {
+      @include flexRow;
+      margin-top: 0.5rem;
+      padding: 0 0.5rem 0 0.5rem;
+
+      .fname {
+        @include flexColumn;
+        flex: 1;
+        margin-right: 0.5rem;
+      }
+      .sname {
+        @include flexColumn;
+        flex: 1;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .email {
+      @include flexColumn;
+      margin-top: 0.5rem;
+      padding: 0 0.5rem 0 0.5rem;
+    }
+
+    .enquiry {
+      @include flexColumn;
+      margin-top: 0.5rem;
+      padding: 0 0.5rem 0 0.5rem;
+
+      textarea {
+        margin-top: 0.25rem;
+        padding: 0.5rem;
+        resize: vertical;
+        background-color: $white-2;
+        border: solid $darkgreen-2 1px;
+      }
+    }
+
+    h2 {
+      margin: 1rem 0 0.25rem 0;
+    }
+
+    .required {
+      color: red;
+      font-weight: bold;
+    }
+
+    .confirm {
+      padding: 0 0.5rem;
+      input[type="submit"] {
+        display: block;
+        margin: 1rem 0 0.25rem 0;
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        border: none;
+        transition: $default-transition;
+        cursor: pointer;
+
+        background-color: $lightgreen-2;
+        color: white;
+        box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+      }
+      input[type="submit"]:hover {
+        background-color: $darkgreen-1;
+      }
+    }
+  }
 }
 
 footer {
-  $background: $lightgreen-2;
-  $text: $white-2;
+  $background: $white-1;
+  $text: black;
+  $text-2: $darkgreen-1;
 
   background-color: $background;
   color: $text;
@@ -626,12 +871,12 @@ footer {
 
       a {
         padding: 0 1.5rem;
-        color: $white-1;
+        color: $text-2;
       }
 
       a:hover,
       .current {
-        color: $white-2;
+        color: $text;
       }
     }
   }

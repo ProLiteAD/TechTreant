@@ -3,30 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/public/assets/images/tree.svg">
+    <link rel="icon" href="/public/assets/images/tree.svg" />
     <link rel="stylesheet" href="/public/css/main.css" />
     <title>Shop</title>
+
+    <style>
+      /* h1{
+        font-family: "OpenSans_Condensed";
+      }
+      h2{
+        font-family: "CooperHewitt-Book";
+      }
+      p, ul, li, a, input, button{
+        font-family: "PTSans-Regular";
+      } */
+    </style>
   </head>
 
   <body>
     <div id="app">
-      <header-component 
+      <header-component
         :is-shop="true"
         :total="totalItems.length"
-        @hover-cart-icon="(i)=>hoverCartIcon(i)"></header-component>
+        @hover-cart-icon="(i)=>hoverCartIcon(i)"
+      ></header-component>
 
       <cart-component
         @mouseover="updateFilter()"
         :filtered-items="filteredItems"
         :total-price="calculateTotal()"
         @hover-cart="(i)=>hoverCart(i)"
-        :class="{ hide: !cartHover }"></cart-component>
+        :class="{ hide: !cartHover }"
+      ></cart-component>
 
       <nav-component :is-shop="true"></nav-component>
 
-      <button id="topButton" 
+      <button
+        id="topButton"
         @click="topReturn();"
-        :class="{ hide: !showReturn }">
+        :class="{ hide: !showReturn }"
+      >
         Top
       </button>
 

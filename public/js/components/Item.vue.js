@@ -34,6 +34,19 @@ export default {
       myImage.value = oldImage.value;
     }
 
+    function displayStars(){
+      let stars = '';
+      for(let i = 0; i < props.myItem.stars; i++){
+        stars += '&#9733;';
+      }
+      if(props.myItem.stars < 5){
+        for(let i = 0; i < 5 - props.myItem.stars; i++){
+          stars += '&#9734;';
+        }
+      }
+      return stars;
+    }
+
     return {
       count,
       myImage,
@@ -42,7 +55,8 @@ export default {
       removeCart,
       updateImage,
       hoverImage,
-      unhoverImage
+      unhoverImage,
+      displayStars
     }
   },
   template: `
@@ -64,10 +78,11 @@ export default {
     </div>
     <div class="main">
       <h2>{{ myItem.name }}  <span v-if="count>0">| x{{ count }}</span></h2>
+      <div class="stars" v-html="displayStars()">
+      </div>
       <p>{{ myItem.description }}</p>
-
       <ul v-for="tag in myItem.tags">
-        <li>{{ tag }}</li>
+        <li>{{ tag[0].toUpperCase() + tag.slice(1) }}</li>
       </ul>
 
     </div>
@@ -75,12 +90,15 @@ export default {
       <h2>£{{ myItem.price }}</h2>
       <p class="o-price">£{{ myItem.oldPrice }}</p>
 
+      <p>&check; Founding Sale</p>
+      <p>&check; Free Delivery</p>
+
       <button 
-        class="green"
+        class="add"
         @click="addCart()">Add</button>
       
       <button 
-        class="red"
+        class="remove"
         v-show="count > 0"
         @click="removeCart()">Remove</button>
     </div>

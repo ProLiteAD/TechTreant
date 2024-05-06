@@ -21,8 +21,8 @@ export default {
         </div>
         <div class="flex-fill">
             <form action="">
-                <input type="text" name="search" placeholder="Search..."><button type="submit">
-                </button>
+                <input type="text" name="search" placeholder="Search...">
+                <button type="submit"></button>
             </form>
         </div>
         <div id="cart" 
@@ -34,11 +34,11 @@ export default {
                 <span id="cart-count">{{ total.total }}</span>
             </a>
         </div>
-        <div>
+        <!-- <div>
             <a href="account">
                 <img class="icon" src="/public/assets/images/person-fill.svg" alt="User">
             </a>
-        </div>
+        </div> -->
     </header>
     `,
 };

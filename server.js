@@ -12,9 +12,14 @@ app.get('/checkout', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/checkout.html'));
 });
 
+app.get('/support', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/support.html'));
+});
+
 app.get('*', (req, res) => {
     let type = req.url.split('.').pop();
-    console.log(req.url);
+    // console.log(req.url, type);
+
 
     let filePath = path.join(__dirname, req.url);
 
@@ -37,7 +42,11 @@ app.get('*', (req, res) => {
     else if(type === 'jpg'){ 
         res.contentType('image/jpg');
     }
+    else if(type === 'ttf' || type === 'otf'){
+        
+    }
     else{
+        console.log(req.url);
         filePath = path.join(__dirname, 'public/index.html');
     }
 

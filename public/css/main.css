@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "OpenSans_Condensed";
+  src: url("/public/assets/fonts/OpenSans_Condensed-Bold.ttf");
+}
+@font-face {
+  font-family: "CooperHewitt-Book";
+  src: url("/public/assets/fonts/CooperHewitt-Book.otf");
+}
+@font-face {
+  font-family: "PTSans-Regular";
+  src: url("/public/assets/fonts/PTSans-Regular.ttf");
+}
 @media (min-width: 1281px) {
   header {
     width: 80%;
@@ -36,7 +48,6 @@
   }
 }
 * {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -47,10 +58,31 @@
 body {
   margin: 0;
   padding: 0;
-  background: #f2f0ea;
 }
 body h1 {
   margin: 0 0 1rem 0;
+  font-family: "OpenSans_Condensed", Arial, Helvetica, sans-serif;
+}
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body nav ul li a {
+  font-family: "CooperHewitt-Book", Arial, Helvetica, sans-serif;
+}
+body h2 {
+  color: #344e41;
+}
+body h3 {
+  color: #344e41;
+}
+body button,
+body input[type=submit] {
+  font-weight: bold;
+}
+body * {
+  font-family: "PTSans-Regular", Arial, Helvetica, sans-serif;
 }
 body p {
   margin: 1rem 0 1rem 0;
@@ -73,20 +105,22 @@ header div form {
   text-align: center;
 }
 header div form input[type=text] {
+  margin: 0.5rem 0.1rem 0.5rem 0;
   padding: 0.75rem;
-  border: none;
-  border-radius: 1rem;
   width: 25%;
-  margin: 0.5rem 0 0.5rem 0;
+  border-radius: 1rem;
+  border: none;
   font-size: 1rem;
+  background-color: #f2f0ea;
 }
 header div form button {
+  margin-left: 0.1rem;
   background-image: url("/public/assets/images/search2.svg");
   background-color: #a3b18a;
   background-size: 75%;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 1.25rem;
+  padding: 1.35rem;
   border: none;
   border-radius: 1rem;
   vertical-align: middle;
@@ -117,15 +151,16 @@ header #cart {
 }
 header #cart #cart-count {
   font-size: 0.8rem;
-  color: black;
+  color: #344e41;
   position: absolute;
-  top: 60%;
+  top: 57%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 nav {
-  background-color: #a3b18a;
+  background-color: #f2f0ea;
+  border-bottom: solid #b7aa8b 1px;
 }
 nav ul {
   list-style-type: none;
@@ -137,28 +172,28 @@ nav ul li {
 }
 nav ul li a {
   display: block;
-  padding: 0.5rem 2rem;
-  background-color: #a3b18a;
-  color: black;
+  padding: 0.75rem 2rem 0.5rem 2rem;
+  background-color: #f2f0ea;
+  color: #344e41;
   text-decoration: none;
   letter-spacing: 0.1rem;
   transition: 0.25s;
 }
 nav ul li a:hover,
 nav ul li .current {
-  background-color: #3a5a40;
-  color: #f2f0ea;
+  background-color: #588157;
+  color: #fff;
 }
 
 .cart {
-  background-color: #a3b18a;
+  background-color: #f2f0ea;
   position: absolute;
   padding: 0 0.5rem 0 0.5rem;
   border-radius: 0 0 0 0.5rem;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
 }
 .cart .items .item {
-  border-bottom: solid black 1px;
+  border-bottom: solid #344e41 1px;
   padding: 0.5rem 0 0.5rem 0;
   display: flex;
   flex-wrap: nowrap;
@@ -236,6 +271,60 @@ main .breadcrumb a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+main .slides-container .buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 60%;
+  left: 0%;
+  right: 0%;
+}
+main .slides-container .buttons div {
+  flex: 1;
+}
+main .slides-container .buttons div:nth-child(2) {
+  text-align: right;
+}
+main .slides-container .buttons button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  transition: 0.25s;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #588157;
+  color: white;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+}
+main .slides-container .buttons button:hover {
+  background-color: #3a5a40;
+}
+main .slides-container .buttons .prev {
+  margin-left: 1rem;
+}
+main .slides-container .buttons .next {
+  margin-right: 1rem;
+}
+main .slides-container .slides {
+  padding-top: 0.25rem;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+}
+main .slides-container .slides .slide:first-of-type {
+  margin-left: -15rem;
+}
+main .slides-container .slides .slide {
+  margin-left: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background-image: radial-gradient(#f2f0ea, #fff);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 0.5rem;
+}
+main .slides-container .slides .slide img {
+  height: 300px;
+}
 main .shopping {
   margin-top: 1rem;
   display: flex;
@@ -245,9 +334,10 @@ main .shopping .filter {
   margin-left: 0.5rem;
   margin-bottom: 1.5rem;
   padding: 0.5rem;
-  background-image: radial-gradient(#f2f0ea, #dad7cd);
+  background-image: radial-gradient(#f2f0ea, #fff);
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
   border-radius: 0.5rem;
+  padding: 0.5rem 2rem 1rem 2rem;
   margin-left: 0;
   margin-right: 1rem;
   height: fit-content;
@@ -259,6 +349,7 @@ main .shopping .filter .sortFilter label {
   display: block;
 }
 main .shopping .filter .sortFilter label input[type=radio] {
+  margin-top: 0.2rem;
   vertical-align: top;
   height: 1rem;
   aspect-ratio: 1;
@@ -277,13 +368,24 @@ main .shopping .filter .sortFilter label input[type=radio]:checked {
 main .shopping .items {
   flex: 1;
 }
+main .shopping .items .top {
+  display: flex;
+  flex-wrap: nowrap;
+}
+main .shopping .items .top p {
+  flex: 1;
+  margin: auto 0;
+  padding: 0 0.5rem 0 0;
+  text-align: right;
+  color: #3a5a40;
+}
 main .shopping .items .item {
   display: flex;
   flex-wrap: nowrap;
   margin-left: 0.5rem;
   margin-bottom: 1.5rem;
   padding: 0.5rem;
-  background-image: radial-gradient(#f2f0ea, #dad7cd);
+  background-image: radial-gradient(#f2f0ea, #fff);
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
   border-radius: 0.5rem;
 }
@@ -307,19 +409,22 @@ main .shopping .items .item .image .color div {
 }
 main .shopping .items .item .image .color .black {
   background-color: black;
-  border: solid white 1px;
+  border: solid #344e41 1px;
 }
 main .shopping .items .item .image .color .white {
   background-color: white;
-  border: solid black 1px;
+  border: solid #344e41 1px;
 }
 main .shopping .items .item .image .color .red {
   background-color: red;
-  border: solid black 1px;
+  border: solid #344e41 1px;
 }
 main .shopping .items .item .main {
   margin: 0 0.5rem 0 0.5rem;
   flex: 1;
+}
+main .shopping .items .item .main .stars {
+  margin: 0;
 }
 main .shopping .items .item .main ul {
   margin-left: 1.25rem;
@@ -328,7 +433,7 @@ main .shopping .items .item .side {
   min-width: 6rem;
   padding: 0 0.5rem 0 0.5rem;
   text-align: center;
-  border-left: solid black 1px;
+  border-left: solid #344e41 1px;
 }
 main .shopping .items .item .side .o-price {
   margin-top: 0;
@@ -346,18 +451,18 @@ main .shopping .items .item .side button {
   border-radius: 0.5rem;
   cursor: pointer;
 }
-main .shopping .items .item .side .red {
-  background-color: rgb(224, 38, 38);
+main .shopping .items .item .side .remove {
+  background-color: rgb(197, 46, 66);
   color: white;
 }
-main .shopping .items .item .side .red:hover {
-  background-color: rgb(173, 33, 33);
+main .shopping .items .item .side .remove:hover {
+  background-color: rgb(155, 47, 87);
 }
-main .shopping .items .item .side .green {
+main .shopping .items .item .side .add {
   background-color: #588157;
   color: white;
 }
-main .shopping .items .item .side .green:hover {
+main .shopping .items .item .side .add:hover {
   background-color: #3a5a40;
 }
 main .checkout {
@@ -366,14 +471,14 @@ main .checkout {
 }
 main .checkout .items {
   padding-right: 1rem;
-  border-right: solid black 1px;
+  border-right: solid #344e41 1px;
 }
 main .checkout .items table {
   border-collapse: collapse;
 }
 main .checkout .items table tr td,
 main .checkout .items table tr th {
-  border-bottom: solid black 1px;
+  border-bottom: solid #344e41 1px;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   text-align: center;
 }
@@ -396,10 +501,17 @@ main .checkout form {
 main .checkout form h3 {
   margin: 1rem 0 0.25rem 0;
 }
-main .checkout form input[type=text], main .checkout form input[type=email] {
+main .checkout form input[type=text],
+main .checkout form input[type=email] {
   padding: 0.75rem;
   margin: 0.25rem 0 0.5rem 0;
   font-size: 1rem;
+  background-color: #f2f0ea;
+  border: solid #344e41 1px;
+  outline: none;
+}
+main .checkout form input[type=text]:disabled {
+  background-color: lightgrey;
 }
 main .checkout form .name {
   display: flex;
@@ -429,21 +541,28 @@ main .checkout form .email {
   margin-top: 0.5rem;
   padding: 0 0.5rem 0 0.5rem;
 }
-main .checkout form .address, main .checkout form .address2 {
+main .checkout form .address,
+main .checkout form .address2 {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   margin-top: 0.5rem;
   padding: 0 0.5rem 0 0.5rem;
 }
-main .checkout form .address .line1, main .checkout form .address .city, main .checkout form .address2 .line1, main .checkout form .address2 .city {
+main .checkout form .address .line1,
+main .checkout form .address .city,
+main .checkout form .address2 .line1,
+main .checkout form .address2 .city {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   flex: 1;
   margin-right: 0.5rem;
 }
-main .checkout form .address .line2, main .checkout form .address .postcode, main .checkout form .address2 .line2, main .checkout form .address2 .postcode {
+main .checkout form .address .line2,
+main .checkout form .address .postcode,
+main .checkout form .address2 .line2,
+main .checkout form .address2 .postcode {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -472,7 +591,10 @@ main .checkout form .notes {
 }
 main .checkout form .notes textarea {
   padding: 0.5rem;
+  margin-top: 0.25rem;
   resize: vertical;
+  background-color: #f2f0ea;
+  border: solid #344e41 1px;
 }
 main .checkout form .required {
   color: red;
@@ -496,10 +618,90 @@ main .checkout form .confirm input[type=submit] {
 main .checkout form .confirm input[type=submit]:hover {
   background-color: #3a5a40;
 }
+main .supportForm {
+  margin-left: 1rem;
+  flex: 1;
+}
+main .supportForm input[type=text],
+main .supportForm input[type=email] {
+  padding: 0.75rem;
+  margin: 0.25rem 0 0.5rem 0;
+  font-size: 1rem;
+  background-color: #f2f0ea;
+  border: solid #344e41 1px;
+  outline: none;
+}
+main .supportForm .name {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-top: 0.5rem;
+  padding: 0 0.5rem 0 0.5rem;
+}
+main .supportForm .name .fname {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 0.5rem;
+}
+main .supportForm .name .sname {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 0.5rem;
+}
+main .supportForm .email {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  padding: 0 0.5rem 0 0.5rem;
+}
+main .supportForm .enquiry {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  padding: 0 0.5rem 0 0.5rem;
+}
+main .supportForm .enquiry textarea {
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  resize: vertical;
+  background-color: #f2f0ea;
+  border: solid #344e41 1px;
+}
+main .supportForm h2 {
+  margin: 1rem 0 0.25rem 0;
+}
+main .supportForm .required {
+  color: red;
+  font-weight: bold;
+}
+main .supportForm .confirm {
+  padding: 0 0.5rem;
+}
+main .supportForm .confirm input[type=submit] {
+  display: block;
+  margin: 1rem 0 0.25rem 0;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  border: none;
+  transition: 0.25s;
+  cursor: pointer;
+  background-color: #588157;
+  color: white;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+}
+main .supportForm .confirm input[type=submit]:hover {
+  background-color: #3a5a40;
+}
 
 footer {
-  background-color: #588157;
-  color: #f2f0ea;
+  background-color: #dad7cd;
+  color: black;
   padding: 0.5rem 1rem;
 }
 footer p {
@@ -517,11 +719,11 @@ footer ul li {
 }
 footer ul li a {
   padding: 0 1.5rem;
-  color: #dad7cd;
+  color: #3a5a40;
 }
 footer ul li a:hover,
 footer ul li .current {
-  color: #f2f0ea;
+  color: black;
 }
 
 /*# sourceMappingURL=main.css.map */

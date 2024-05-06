@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/public/assets/images/tree.svg">
-    <link rel="stylesheet" href="/public/css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/public/assets/images/tree.svg" />
+    <link rel="stylesheet" href="/public/css/main.css" />
     <title>Checkout</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">
-        <header-component :is-shop="false"></header-component>
-        <nav-component :is-home="false"></nav-component>
+      <header-component :is-shop="false"></header-component>
+      <nav-component :is-home="false"></nav-component>
 
-        <button id="topButton" 
-          @click="topReturn();"
-          :class="{ hide: !showReturn }">
-          Top
-        </button>
+      <button
+        id="topButton"
+        @click="topReturn();"
+        :class="{ hide: !showReturn }"
+      >
+        Top
+      </button>
 
-        <main>
-            <div>
-                <p class="breadcrumb"><a href="/shop">Shop</a> / <a>Checkout</a> / </p>
-              </div>
-            <checkout-component></checkout-component>
-        </main>
+      <main>
+        <div>
+          <p class="breadcrumb">
+            <a href="/">Home</a> / <a href="/shop">Shop</a> / <a>Checkout</a> /
+          </p>
+        </div>
+        <checkout-component></checkout-component>
+      </main>
 
-        <footer-component :is-home="false"></footer-component>
+      <footer-component :is-home="false"></footer-component>
     </div>
 
     <script type="importmap">
-        {
-            "imports": {
-                "allItems": "/public/assets/data/items.js",
-                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-            }
+      {
+        "imports": {
+          "allItems": "/public/assets/data/items.js",
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
         }
+      }
     </script>
     <script type="module" src="/public/js/main.js"></script>
     <script>
-        // let cart;
-        // try{
-        //     myCart = JSON.parse(localStorage['cart']);
-        //     console.log(myCart);
-        //     // localStorage.removeItem('cart');
-        // }
-        // catch(error){
-        //     console.error('No cart found \n'+error);
-        // }
+      // let cart;
+      // try{
+      //     myCart = JSON.parse(localStorage['cart']);
+      //     console.log(myCart);
+      //     // localStorage.removeItem('cart');
+      // }
+      // catch(error){
+      //     console.error('No cart found \n'+error);
+      // }
     </script>
-</body>
-
+  </body>
 </html>

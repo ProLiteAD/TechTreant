@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/public/assets/images/tree.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/public/assets/images/tree.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/main.css" />
     <title>Home</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">
-        <header-component :is-shop="false"></header-component>
-        <nav-component :is-home="true"></nav-component>
+      <header-component :is-shop="false"></header-component>
+      <nav-component :is-home="true"></nav-component>
 
-        <button id="topButton" 
-          @click="topReturn();"
-          :class="{ hide: !showReturn }">
-          Top
-        </button>
+      <button
+        id="topButton"
+        @click="topReturn();"
+        :class="{ hide: !showReturn }"
+      >
+        Top
+      </button>
 
-        <main>
-            <div>
-                <p class="breadcrumb"><a>Home</a> / </p>
-                <h1>Home</h1>
-              </div>
-            <p>This is the homepage!</p>
+      <main>
+        <div>
+          <p class="breadcrumb"><a>Home</a> /</p>
+          <h1>Home</h1>
+        </div>
+        <slides-component></slides-component>
+        
+      </main>
 
-        </main>
-
-        <footer-component :is-home="true"></footer-component>
+      <footer-component :is-home="true"></footer-component>
     </div>
+    <script>
+      document.querySelector(".slide");
+    </script>
 
     <script type="importmap">
-        {
-            "imports": {
-                "allItems": "/public/assets/data/items.js",
-                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-            }
+      {
+        "imports": {
+          "allItems": "/public/assets/data/items.js",
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
         }
+      }
     </script>
     <script type="module" src="/public/js/main.js"></script>
-</body>
-
+  </body>
 </html>

@@ -2,6 +2,7 @@ export const allItems = [
   {
     id: "1",
     name: "USB-C Charger",
+    stars: 4,
     price: 4.99,
     oldPrice: 9.99,
     description: "A high-quality USB-C charger for fast charging.",
@@ -30,6 +31,7 @@ export const allItems = [
   {
     id: "2",
     name: "Smartphone",
+    stars: 3,
     price: 699.99,
     oldPrice: 849.99,
     description: "A high-quality smartphone with advanced features.",
@@ -44,6 +46,7 @@ export const allItems = [
   {
     id: "4",
     name: "Smartwatch",
+    stars: 2,
     price: 199.99,
     oldPrice: 249.99,
     description: "A stylish smartwatch with fitness tracking features.",
@@ -59,6 +62,7 @@ export const allItems = [
   {
     id: "5",
     name: "Tablet",
+    stars: 4,
     price: 299.99,
     oldPrice: 349.99,
     description: "A versatile tablet for entertainment and productivity.",
@@ -74,6 +78,7 @@ export const allItems = [
   {
     id: "6",
     name: "Headphones",
+    stars: 4,
     price: 99.99,
     oldPrice: 129.99,
     description: "High-quality headphones for immersive audio experience.",
@@ -99,6 +104,7 @@ export const allItems = [
   {
     id: "7",
     name: "Gaming Console",
+    stars: 5,
     price: 199.99,
     oldPrice: 359.99,
     description: "A gaming console for the ultimate gaming experience.",
@@ -113,6 +119,7 @@ export const allItems = [
   {
     id: "8",
     name: "Wireless Router",
+    stars: 4,
     price: 79.99,
     oldPrice: 99.99,
     description:
@@ -128,6 +135,7 @@ export const allItems = [
   {
     id: "9",
     name: "Camera",
+    stars: 4,
     price: 599.99,
     oldPrice: 699.99,
     description:
@@ -143,6 +151,7 @@ export const allItems = [
   {
     id: "10",
     name: "Bluetooth Speaker",
+    stars: 2,
     price: 59.99,
     oldPrice: 79.99,
     description: "A portable Bluetooth speaker for on-the-go music.",
@@ -157,6 +166,7 @@ export const allItems = [
   {
     id: "11",
     name: "External Hard Drive",
+    stars: 3,
     price: 129.99,
     oldPrice: 149.99,
     description: "An external hard drive for storing large amounts of data.",

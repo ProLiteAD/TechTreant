@@ -121,6 +121,8 @@ export default {
     };
   },
   template: `
+
+  <p class="breadcrumb"><a href="/">Home</a> / <a>Shop</a> / </p>
   <div class="shopping">
     <div class="filter">
     <h2>Filters</h2>
@@ -149,8 +151,10 @@ export default {
     
     <div class="items" v-if="renderComponent">
       <div>
-        <p class="breadcrumb"><a>Shop</a> / </p>
-        <h1>Shop</h1>
+        <div class="top">
+          <h1>Shop</h1>
+          <p>Results: {{ shopItems.length }}</p>
+        </div>
       </div>
       <item-component
         v-for="item in shopItems"
