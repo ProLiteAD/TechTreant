@@ -58,41 +58,40 @@ export default {
             <h3>Shipping Address</h3>
             <div class="name">
                 <div class="fname">
-                    <label for="fname">First Name</label>
-                    <input type="text" name="fname" placeholder="Firstname">
+                    <label for="fname">First Name <span class="required">*</span></label>
+                    <input type="text" name="fname" placeholder="Firstname" required>
                 </div>
                 <div class="sname">
-                    <label for="sname">Surame</label>
-                    <input type="text" name="sname" placeholder="Surname">
+                    <label for="sname">Surame <span class="required">*</span></label>
+                    <input type="text" name="sname" placeholder="Surname" required>
                 </div>
             </div>
 
             <div class="email">
-                <label for="email">Email</label>
-                <input type="email" name="email" placeholder="Email">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" name="email" placeholder="Email" required>
             </div>
 
             <div class="address">
                 <div class="line1">
-                    <label for="line1">Address Line 1</label>
-                    <input type="text" name="line1" placeholder="123 Street">
+                    <label for="line1">Address Line 1 <span class="required">*</span></label>
+                    <input type="text" name="line1" placeholder="123 Street" required>
                 </div>
                 <div class="line2">
-                    <label for="line2">Address Line 2</label>
-                    <input type="text" name="line2" placeholder="Flat 7">
+                    <label for="line2">Address Line 2 <span class="required">*</span></label>
+                    <input type="text" name="line2" placeholder="Flat 7" required>
                 </div>
             </div>
             <div class="address2">
                 <div class="city">
-                    <label for="city">City / Town</label>
-                    <input type="text" name="city" placeholder="London">
+                    <label for="city">City / Town <span class="required">*</span></label>
+                    <input type="text" name="city" placeholder="London" required>
                 </div>
                 <div class="postcode">
-                    <label for="postcode">Postcode</label>
-                    <input type="text" name="postcode" placeholder="Postcode">
+                    <label for="postcode">Postcode <span class="required">*</span></label>
+                    <input type="text" name="postcode" placeholder="Postcode" required>
                 </div>
             </div>
-
             <div class="address3">
                 <div class="country">
                     <label for="country">Country</label>
@@ -100,8 +99,20 @@ export default {
                 </div>
             </div>
 
-            <h3>Confirmation</h3>
+            <div class="notes">
+                <label for="notes">Additional Notes</label>
+                <textarea name="notes" placeholder="Additional Notes"></textarea>
+            </div>
 
+            <h3>Confirmation</h3>
+            <div class="confirm">
+                <label for="terms">
+                    <input type="checkbox" name="terms" id="terms" required>
+                    I agree to the terms and conditions <span class="required">*</span>
+                </label>
+
+                <input type="submit" value="Pay Now">
+            </div>
         </form>
     </div>
     `,

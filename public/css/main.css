@@ -394,7 +394,7 @@ main .checkout form {
   flex: 1;
 }
 main .checkout form h3 {
-  margin: 0.5rem 0 0.25rem 0;
+  margin: 1rem 0 0.25rem 0;
 }
 main .checkout form input[type=text], main .checkout form input[type=email] {
   padding: 0.75rem;
@@ -462,7 +462,39 @@ main .checkout form .address3 .country {
   flex-wrap: nowrap;
   flex-direction: column;
   flex: 1;
-  margin-right: 0.5rem;
+}
+main .checkout form .notes {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  padding: 0 0.5rem 0 0.5rem;
+}
+main .checkout form .notes textarea {
+  padding: 0.5rem;
+  resize: vertical;
+}
+main .checkout form .required {
+  color: red;
+  font-weight: bold;
+}
+main .checkout form .confirm {
+  padding: 0 0.5rem;
+}
+main .checkout form .confirm input[type=submit] {
+  display: block;
+  margin: 1rem 0 0.25rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  transition: 0.25s;
+  cursor: pointer;
+  background-color: #588157;
+  color: white;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+}
+main .checkout form .confirm input[type=submit]:hover {
+  background-color: #3a5a40;
 }
 
 footer {
