@@ -1,7 +1,10 @@
 import { ref } from "vue";
+import { allItems } from "allItems";
+
 export default {
   props: [],
   setup() {
+    const itemsAll = ref(allItems);
     const totalItems = ref([]);
     const filteredItems = ref([]);
 
@@ -61,7 +64,6 @@ export default {
       window.scrollTo(0, 0);
     }
 
-
     window.onscroll = function() {
       scrollFunction()
     };
@@ -80,6 +82,7 @@ export default {
     }
 
     return {
+      itemsAll,
       totalItems,
       filteredItems,
       cartHover,

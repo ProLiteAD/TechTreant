@@ -77,7 +77,7 @@ export default {
       </div>
     </div>
     <div class="main">
-      <h2>{{ myItem.name }}  <span v-if="count>0">| x{{ count }}</span></h2>
+      <h2 :id="'item_' + myItem.id">{{ myItem.name }}  <span v-if="count>0">| x{{ count }}</span></h2>
       <div class="stars" v-html="displayStars()">
       </div>
       <p>{{ myItem.description }}</p>

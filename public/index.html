@@ -26,8 +26,50 @@
           <p class="breadcrumb"><a>Home</a> /</p>
           <h1>Home</h1>
         </div>
-        <slides-component></slides-component>
-        
+        <slides-component
+          title="Featured Items"
+          :items="itemsAll.slice(itemsAll.length-6,itemsAll.length)"
+        ></slides-component>
+
+        <slides-component
+          title="New Arivals"
+          :items="itemsAll.slice(0,6)"
+        ></slides-component>
+
+        <h2>About TechTreant</h2>
+        <div class="about">
+          <p>Welcome to TechTreant!</p>
+
+          <p>
+            At TechTreant, we're dedicated to harnessing the power of technology
+            to empower individuals and businesses while preserving our planet
+            for future generations. We strive to create cutting-edge solutions
+            that make a positive impact on people's lives and the environment.
+          </p>
+
+          <h3>Our Eco-Friendly Mission:</h3>
+          <p>
+            At TechTreant, we're on a mission to lead the way in environmental
+            sustainability. We believe in using technology to drive positive
+            change and protect the planet. From reducing carbon emissions to
+            minimizing electronic waste, we're committed to implementing
+            eco-friendly practices in every aspect of our business.
+          </p>
+
+          <h3>Our Green Values:</h3>
+          <p>
+            Environmental stewardship is at the core of everything we do. We
+            operate with a deep sense of responsibility for the planet, and
+            we're dedicated to making environmentally conscious decisions in all
+            our operations. Our commitment to sustainability guides our product
+            development, manufacturing processes, and business practices.
+          </p>
+
+          <p>
+            Thank you for choosing TechTreant as your partner in environmental
+            sustainability. Together, we can make a difference!
+          </p>
+        </div>
       </main>
 
       <footer-component :is-home="true"></footer-component>

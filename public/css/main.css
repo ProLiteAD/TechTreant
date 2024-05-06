@@ -271,21 +271,12 @@ main .breadcrumb a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
-main .slides-container .buttons {
-  display: flex;
-  flex-wrap: nowrap;
+main .slides-container {
+  position: relative;
+}
+main .slides-container button {
   position: absolute;
-  top: 60%;
-  left: 0%;
-  right: 0%;
-}
-main .slides-container .buttons div {
-  flex: 1;
-}
-main .slides-container .buttons div:nth-child(2) {
-  text-align: right;
-}
-main .slides-container .buttons button {
+  top: 50%;
   padding: 0.5rem;
   font-size: 1rem;
   border: none;
@@ -296,14 +287,16 @@ main .slides-container .buttons button {
   color: white;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
 }
-main .slides-container .buttons button:hover {
+main .slides-container button:hover {
   background-color: #3a5a40;
 }
-main .slides-container .buttons .prev {
-  margin-left: 1rem;
+main .slides-container .prev {
+  left: 0;
+  margin-left: 0.5rem;
 }
-main .slides-container .buttons .next {
-  margin-right: 1rem;
+main .slides-container .next {
+  right: 0;
+  margin-right: 0.5rem;
 }
 main .slides-container .slides {
   padding-top: 0.25rem;
@@ -324,6 +317,10 @@ main .slides-container .slides .slide {
 }
 main .slides-container .slides .slide img {
   height: 300px;
+}
+main .about p {
+  margin-top: 0;
+  margin-left: 0.25rem;
 }
 main .shopping {
   margin-top: 1rem;
