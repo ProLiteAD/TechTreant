@@ -3,7 +3,6 @@ export default {
   props: ["total", "isShop"],
   emits: ["hoverCartIcon"],
   setup(total) {
-    // TODO: Search functionality
     
     function hoverCartIcon(input){
         this.$emit('hoverCartIcon',input);

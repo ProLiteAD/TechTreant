@@ -11,7 +11,7 @@
   <body>
     <div id="app">
       <header-component :is-shop="false"></header-component>
-      <nav-component :is-home="false"></nav-component>
+      <nav-component :is-shop="true"></nav-component>
 
       <button
         id="topButton"
@@ -30,7 +30,7 @@
         <checkout-component></checkout-component>
       </main>
 
-      <footer-component :is-home="false"></footer-component>
+      <footer-component :is-shop="true"></footer-component>
     </div>
 
     <script type="importmap">

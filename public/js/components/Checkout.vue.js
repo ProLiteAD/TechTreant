@@ -11,7 +11,6 @@ export default {
     } catch (error) {
       console.error("No cart found \n" + error);
     }
-    // TODO: Cart modification functions
 
     function calculateTotal() {
       let totalPrice = 0;

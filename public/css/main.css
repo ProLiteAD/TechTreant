@@ -252,6 +252,7 @@ nav ul li .current {
   border-radius: 100%;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
   transition: 0.25s;
+  z-index: 1000;
 }
 
 #topButton:hover {
@@ -275,8 +276,6 @@ main .slides-container {
   position: relative;
 }
 main .slides-container button {
-  position: absolute;
-  top: 50%;
   padding: 0.5rem;
   font-size: 1rem;
   border: none;
@@ -289,6 +288,10 @@ main .slides-container button {
 }
 main .slides-container button:hover {
   background-color: #3a5a40;
+}
+main .slides-container .prev, main .slides-container .next {
+  position: absolute;
+  top: 50%;
 }
 main .slides-container .prev {
   left: 0;

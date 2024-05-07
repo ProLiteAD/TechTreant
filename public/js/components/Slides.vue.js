@@ -33,6 +33,10 @@ export default {
                     <img :src="shopItems[i].image[0].url" :alt="shopItems[i].image[0].name" />
                 </a>
                 <p>{{ shopItems[i].description }}</p>
+                <p><strong>£{{ shopItems[i].price }}</strong></p>
+                <a :href="'shop/#item_' + shopItems[i].id">
+                <button>View Product</button>
+                </a>
             </div>
         </div>
         <button class="prev" @click="prevButton">Prev</button>
@@ -40,11 +44,3 @@ export default {
     </div>
     `,
 };
-
-{
-  /* <div class="slide" v-for="item in shopItems">
-            <h2>{{ item.name }}</h2>
-            <img :src="item.image[0].url" :alt="item.image[0].name" />
-            <p>{{ item.description }}</p>
-        </div> */
-}

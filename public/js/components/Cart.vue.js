@@ -7,16 +7,16 @@ export default {
       this.$emit("hoverCart", input);
     }
 
-    function checkoutPage(){
-      sessionStorage.setItem('cart', JSON.stringify(props.filteredItems));
-      document.location.href = '/checkout';
+    function checkoutPage() {
+      sessionStorage.setItem("cart", JSON.stringify(props.filteredItems));
+      document.location.href = "/checkout";
     }
 
     return {
       props,
       hoverCart,
-      checkoutPage
-    }
+      checkoutPage,
+    };
   },
   template: `
     <div class="cart"

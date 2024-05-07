@@ -20,7 +20,6 @@ app.get('*', (req, res) => {
     let type = req.url.split('.').pop();
     // console.log(req.url, type);
 
-
     let filePath = path.join(__dirname, req.url);
 
     if(type === 'css'){
@@ -43,7 +42,6 @@ app.get('*', (req, res) => {
         res.contentType('image/jpg');
     }
     else if(type === 'ttf' || type === 'otf'){
-        
     }
     else{
         console.log(req.url);
