@@ -1,3 +1,5 @@
+const pathToImages = "/public/assets/images";
+
 export const allItems = [
   {
     id: "1",
@@ -10,7 +12,7 @@ export const allItems = [
     image: [
       {
         color: "black",
-        url: "/public/assets/images/items/usb-c.jpg",
+        url: pathToImages+"/items/usb-c.jpg",
         alt: "Black USB-C Charger",
         attr: {
           name: "Adafruit Industries",
@@ -19,7 +21,7 @@ export const allItems = [
       },
       {
         color: "white",
-        url: "/public/assets/images/items/usb-c2.jpg",
+        url: pathToImages+"/items/usb-c2.jpg",
         alt: "White USB-C Charger",
         attr: {
           name: "Project Kei",
@@ -38,7 +40,7 @@ export const allItems = [
     tags: ["smartphone", "mobile", "communication"],
     image: [
       {
-        url: "/public/assets/images/items/smartphone.jpg",
+        url: pathToImages+"/items/smartphone.jpg",
         alt: "Smartphone",
       },
     ],
@@ -54,7 +56,7 @@ export const allItems = [
     image: [
       {
         color: "black",
-        url: "/public/assets/images/items/smartwatch.jpg",
+        url: pathToImages+"/items/smartwatch.jpg",
         alt: "Smartwatch",
       },
     ],
@@ -70,7 +72,7 @@ export const allItems = [
     image: [
       {
         color: "black",
-        url: "/public/assets/images/items/tablet.jpg",
+        url: pathToImages+"/items/tablet.jpg",
         alt: "Smart Tablet",
       },
     ],
@@ -86,17 +88,17 @@ export const allItems = [
     image: [
       {
         color: "black",
-        url: "/public/assets/images/items/headphones.jpg",
+        url: pathToImages+"/items/headphones.jpg",
         alt: "Black Wireless Headphones",
       },
       {
         color: "white",
-        url: "/public/assets/images/items/headphones2.jpg",
+        url: pathToImages+"/items/headphones2.jpg",
         alt: "White Wireless Headphones",
       },
       {
         color: "red",
-        url: "/public/assets/images/items/headphones3.jpg",
+        url: pathToImages+"/items/headphones3.jpg",
         alt: "Red Wireless Headphones",
       },
     ],
@@ -111,7 +113,7 @@ export const allItems = [
     tags: ["gaming", "console", "entertainment"],
     image: [
       {
-        url: "/public/assets/images/items/gaming-console.jpg",
+        url: pathToImages+"/items/gaming-console.jpg",
         alt: "Black Gaming Console",
       },
     ],
@@ -127,7 +129,7 @@ export const allItems = [
     tags: ["router", "internet", "connectivity"],
     image: [
       {
-        url: "/public/assets/images/items/router.jpg",
+        url: pathToImages+"/items/router.jpg",
         alt: "Black Wireless Router",
       }
     ],
@@ -143,7 +145,7 @@ export const allItems = [
     tags: ["camera", "photography", "professional"],
     image: [
       {
-        url: "/public/assets/images/items/camera.jpg",
+        url: pathToImages+"/items/camera.jpg",
         alt: "Black Professional Camera",
       },
     ],
@@ -158,7 +160,7 @@ export const allItems = [
     tags: ["speaker", "audio", "music", "portable", "bluetooth"],
     image: [
       {
-        url: "/public/assets/images/items/speaker.jpg",
+        url: pathToImages+"/items/speaker.jpg",
         alt: "White Bluetooth Speaker",
       }
     ],
@@ -173,7 +175,7 @@ export const allItems = [
     tags: ["hard drive", "storage", "backup"],
     image: [
       {
-        url: "/public/assets/images/items/harddrive.jpg",
+        url: pathToImages+"/items/harddrive.jpg",
         alt: "Red External Hard Drive",
       }
     ],

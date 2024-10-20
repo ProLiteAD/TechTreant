@@ -1,3 +1,5 @@
+const pathToJs = '/public/js/App.js';
+
 import { createApp } from 'vue';
 import Main from '/public/js/App.js';
 import Nav from '/public/js/components/Nav.vue.js';

@@ -1,3 +1,5 @@
+$pathToFonts: '/public/assets/fonts';
+
 $white-1: #dad7cd;
 $white-2: #f2f0ea;
 $white-3: #b7aa8b;
@@ -13,17 +15,17 @@ $maxBreak1: 1280px;
 
 @font-face {
   font-family: "OpenSans_Condensed";
-  src: url("/public/assets/fonts/OpenSans_Condensed-Bold.ttf");
+  src: url($pathToFonts + '/OpenSans_Condensed-Bold.ttf');
 }
 
 @font-face {
   font-family: "CooperHewitt-Book";
-  src: url("/public/assets/fonts/CooperHewitt-Book.otf");
+  src: url($pathToFonts + '/CooperHewitt-Book.otf');
 }
 
 @font-face {
   font-family: "PTSans-Regular";
-  src: url("/public/assets/fonts/PTSans-Regular.ttf");
+  src: url($pathToFonts + '/PTSans-Regular.ttf');
 }
 
 @media (min-width: $minBreak1) {
@@ -447,8 +449,8 @@ main {
             vertical-align: top;
             height: $size;
             aspect-ratio: 1;
-            border: $size/8 solid $lightgreen-1;
-            padding: $size/8;
+            border: calc($size/8) solid $lightgreen-1;
+            padding: calc($size/8);
             background: radial-gradient(farthest-side, $rColor 94%, #0000) 50%/0
               0 no-repeat content-box;
             border-radius: 1rem;
