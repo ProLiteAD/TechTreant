@@ -44,7 +44,7 @@ app.get('*', (req, res) => {
     else if(type === 'ttf' || type === 'otf'){
     }
     else{
-        console.log(req.url);
+        // console.log(req.url);
         filePath = path.join(__dirname, 'public/index.html');
     }
 

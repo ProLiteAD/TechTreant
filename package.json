@@ -1,5 +1,5 @@
 {
-  "name": "1870",
+  "name": "techtreant",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,8 +9,8 @@
     "sass": "sass --watch dev/scss:public/css",
     "dev": "concurrently --kill-others \"npm run nodemon\" \"npm run sass\""
   },
-  "author": "Syed Adil Ahmed",
-  "license": "ISC",
+  "author": "ProLiteAD",
+  "license": "GNU GPLv3",
   "devDependencies": {
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.0",

@@ -14,7 +14,7 @@ export default {
   },
   template: `
     <footer>
-        <p>This website was designed and developed by Syed Adil Ahmed 2024-<span id="year">{{ year }}</span>.</p>
+        <p>This website was designed and developed by ProLiteAD 2024-<span id="year">{{ year }}</span>.</p>
         <ul>
             <li>
                 <a :class="{current: isHome}" href="/">Home</a>
