@@ -1,5 +1,5 @@
 # TechTreant
-This project was originally created as a university research project. 
+This project was originally created as a university research project (COMP-1870). 
 
 The goal of the project was to investigate the effect of the aesthetic usability effect on establishing user trustworthiness. This was achieved by identifying factors which impact aesthetic usability and creating a high fideltiy prototype which could be compared to websites with lower levels of aesthetic usability, followed by measuring levels of user trustworthiness.
 
